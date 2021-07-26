@@ -7,7 +7,7 @@ const routerClientes = require("../App/routes/cliente");
 
 module.exports = function   (){
     let app = express();
-    app.set("port", 8393);
+    app.set("port", process.env.PORT || 8393);
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
     //Usando tudo que tem na página "public"
