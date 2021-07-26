@@ -8,6 +8,7 @@ function render(cliente){
         bairro: cliente.bairro,
         telefone: cliente.telefone,
         profissao: cliente.profissao,
+        senha: cliente.senha
     }
 }
 
