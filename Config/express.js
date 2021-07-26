@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const routerLogin = require("../App/routes/login");
 const routerClientes = require("../App/routes/cliente");
-let cors = require('cors')
+const cors = require('cors')
 //exporantando função que vai configurar o express
 
 module.exports = function   (){
