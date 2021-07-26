@@ -8,7 +8,7 @@ const cors = require("cors")
 
 module.exports = function   (){
     let app = express();
-    app.set("port", process.env.PORT || 8393);
+    app.set(process.env.PORT || 8393);
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
