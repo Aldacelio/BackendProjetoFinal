@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
-/*module.exports = function(uri){
+module.exports = function(uri){
     mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
     
     mongoose.connection.on('connected', function(){
-       console.log('Mongoose Conectado em '+uri);     
+       console.log('Mongoose Conectado');     
     });
 
     mongoose.connection.on('disconnected', function(){
-        console.log('Mongoose Desconectado em '+uri);     
+        console.log('Mongoose Desconectado de '+uri);     
      });
     
     mongoose.connection.on('error', function(){
@@ -17,12 +17,4 @@ const mongoose = require('mongoose');
 
     mongoose.set('debug', true);
 
-}*/
-
-mongoose.connect(
-    process.env.DB_URI,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-)
+}
