@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-module.exports = function(uri){
+/*module.exports = function(uri){
     mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
     
     mongoose.connection.on('connected', function(){
@@ -17,4 +17,12 @@ module.exports = function(uri){
 
     mongoose.set('debug', true);
 
-}
+}*/
+
+mongoose.connect(
+    process.env.DB_URI,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+)
