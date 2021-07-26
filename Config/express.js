@@ -13,7 +13,7 @@ module.exports = function   (){
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
     //Usando tudo que tem na página "public"
-    app.use(express.static("./Public"));
+    //app.use(express.static("./Public"));
     routerClientes(app);
     routerLogin(app);
     return app;
