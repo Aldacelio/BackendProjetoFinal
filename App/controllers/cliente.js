@@ -1,6 +1,5 @@
 const Cliente = require("../models/cliente");
 const view = require("../views/cliente");
-const login = require("./login");
 
 module.exports.listarClientes = function (req, res) {
     let promise = Cliente.find().exec();
@@ -37,7 +36,6 @@ module.exports.inserirClientes = function (req, res) {
 module.exports.removerClientes = function (req, res) {
     let id = req.params.id;
     let promise = Cliente.findByIdAndRemove(id);
-    login.removerLogin(id, res);
     promise.then(function (cliente) {
         res.status(200).json({ mensagem: cliente.nome + " seu cadastro foi removido com sucesso" });
     }).catch(function (error) {
@@ -56,5 +54,17 @@ module.exports.atualizarClientes = async function (req, res) {
         console.log(error.mensagem);
         res.status(400).json(error.mensagem);
     }
+
+}
+
+module.exports.login = function(req,res){
+    const {email,senha} = req.body;
+
+    let promise = Cliente.findOne({email,senha}).exec();
+    promise.then(function (clientes) {
+        res.status(200).json(clientes);
+    }).catch(function (error) {
+        res.status(500).json({ mensagem: "Deu pau!" });
+    });
 
 }
