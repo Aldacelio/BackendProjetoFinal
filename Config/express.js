@@ -4,7 +4,7 @@ const routerClientes = require("../App/routes/cliente");
 const cors = require('cors')
 //exporantando função que vai configurar o express
 
-module.exports = function   (){
+module.exports = function  (){
     let app = express();
     app.set("port", process.env.PORT || 8393);
     app.use(cors());

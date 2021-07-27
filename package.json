@@ -4,7 +4,8 @@
   "description": "Projeto final nodeJS",
   "main": "Main.js",
   "scripts": {
-    "start": "nodemon Main.js",
+    "dev": "nodemon Main.js",
+    "start": "node Main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
